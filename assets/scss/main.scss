@@ -1,0 +1,121 @@
+@import "./reset";
+@import "./variables";
+@import "./mixin";
+@import "./extend";
+
+$layout-breakpoint-small:990px;
+
+.container{
+    @extend %center-div;
+    justify-content: space-around;
+    width: 100%;
+    padding: 15px 0;
+    background-color: $bgc-color;
+    z-index: 66666;
+
+    .logo{
+        font-family: $ones-font;
+    }
+    span{
+      color: $button-color;
+      font-size: $size;
+      display: inline-block;
+ 
+    }
+    .logo{
+        @extend %center-div;
+        
+    }
+    .nav-link{
+        @extend %center-div;
+      li{
+            font-size: $liSize;
+           margin-right: 20px;
+           font-family: $two-fonts;
+           a{
+           color: $link-color;
+           position: relative;
+           &:hover{
+            color: black;
+           }
+           }
+           a::after{
+            
+            content: "";
+            position: absolute;
+           background-color: $button-color;
+            height: 3px;
+            width: 0;
+            left: 0;
+            bottom: -10px;
+            transition: 0.3s;
+
+        }
+        a:hover::after{
+             
+             width: 100%;
+        }
+           
+        }
+        li:nth-child(1)>a{
+            color: $h1-color
+        }
+    
+    }
+    .button{
+       @include button($button-color, $bgc-color,$radius,rgba(255, 0, 0, 0.429) );
+       @extend %center-div;
+       font-size: $liSize;
+    }
+}.burger{
+        display: none;
+         color:$h1-color;
+        font-size:$size;
+    }
+.dropdown{
+    .list{
+         display: block;
+         position: absolute;     
+         margin: 0;
+         padding: 20px 60px;
+          z-index: 99;
+        visibility: hidden;
+       background-color: $bgc-color;
+         box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+         transition: 0.3s;
+         border-radius: 4px;
+         li{
+           color: $link-color;
+             a{
+            padding: 10px 20px;
+             font-size: 14px;   
+        }
+         } 
+    }
+    &:hover .list{
+        top: 100px;
+        border-bottom: none;
+        visibility: visible;
+        
+       a{
+       background-color: $bgc-color;
+       }
+      
+      
+    }   
+}
+@media(max-width:$layout-breakpoint-small){
+       .container{
+        .nav-link{
+            li{
+                display: none !important;       
+            }
+        }
+    }
+   .burger{
+        display: block !important;
+    }
+ 
+}
+
+

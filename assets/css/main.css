@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container .button, .container .nav-link, .container .logo, .container {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+}
+
+.container {
+  justify-content: space-around;
+  width: 100%;
+  padding: 15px 0;
+  background-color: rgb(241, 238, 238);
+  z-index: 66666;
+}
+.container .logo {
+  font-family: DynaPuff;
+}
+.container span {
+  color: rgb(250, 12, 12);
+  font-size: 30px;
+  display: inline-block;
+}
+.container .nav-link li {
+  font-size: 18px;
+  margin-right: 20px;
+  font-family: Pacifico;
+}
+.container .nav-link li a {
+  color: rgb(167, 167, 167);
+  position: relative;
+}
+.container .nav-link li a:hover {
+  color: black;
+}
+.container .nav-link li a::after {
+  content: "";
+  position: absolute;
+  background-color: rgb(250, 12, 12);
+  height: 3px;
+  width: 0;
+  left: 0;
+  bottom: -10px;
+  transition: 0.3s;
+}
+.container .nav-link li a:hover::after {
+  width: 100%;
+}
+.container .nav-link li:nth-child(1) > a {
+  color: black;
+}
+.container .button {
+  background-color: rgb(250, 12, 12);
+  color: rgb(241, 238, 238);
+  width: 110px;
+  height: 50px;
+  border-radius: 25px;
+  justify-content: center;
+  font-size: 18px;
+}
+.container .button:hover {
+  background-color: rgba(255, 0, 0, 0.429);
+}
+
+.burger {
+  display: none;
+  color: black;
+  font-size: 30px;
+}
+
+.dropdown .list {
+  display: block;
+  position: absolute;
+  margin: 0;
+  padding: 20px 60px;
+  z-index: 99;
+  visibility: hidden;
+  background-color: rgb(241, 238, 238);
+  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+  transition: 0.3s;
+  border-radius: 4px;
+}
+.dropdown .list li {
+  color: rgb(167, 167, 167);
+}
+.dropdown .list li a {
+  padding: 10px 20px;
+  font-size: 14px;
+}
+.dropdown:hover .list {
+  top: 100px;
+  border-bottom: none;
+  visibility: visible;
+}
+.dropdown:hover .list a {
+  background-color: rgb(241, 238, 238);
+}
+
+@media (max-width: 990px) {
+  .container .nav-link li {
+    display: none !important;
+  }
+  .burger {
+    display: block !important;
+  }
+}/*# sourceMappingURL=main.css.map */
